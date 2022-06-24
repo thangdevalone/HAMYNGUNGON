@@ -73,23 +73,20 @@
 </head>
 <body>
     <div class="main">
-
         <div class="header">Đây là Trang của Thắng dành riêng cho chị My</div>
         <div class="container">Chị click vào đây nhé <i style="color:red" class="fa-solid fa-heart"></i>
-            <button onclick="click()" > Click me!<i style="color:red" class="fa-brands fa-gratipay"></i></button>
+           
         </div>
-        
+        <button onclick="clicka()"> Click me!<i style="color:red" class="fa-brands fa-gratipay"></i></button>
     </div>
     <script>
-        function click() {
+        function clicka() {
             var main=document.querySelector(".main");
             var htmls=`<figure class="swing">
             <img src="./HAMY.png" width="200px" >
              </figure>  `
             main.innerHTML=htmls
         }
-        document.querySelector("button").addEventListener('click', click());
-
     </script>
 </body>
 </html>
