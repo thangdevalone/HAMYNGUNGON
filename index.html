@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>HAMY</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            overflow:hidden;
+            color:black;
+            text-align:center;
+        }
+        .header{
+            color:red;
+            text-align:center;
+            margin:20px;
+            font-size:20px;
+        }
+        button{
+            height:25px;
+            width: 100px;
+        }
+        img{
+           border-radius: 10px;
+        }
+        .swing {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    float:left;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    margin-top: 100px;
+}
+.swing img {
+    border: 5px solid #f8f8f8;
+    display: block;
+    
+}
+.swing:after{
+    content: '';
+    position: absolute;  
+    width: 20px; height: 20px;  
+    border: 1px solid #999;
+    top: -10px; left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+/* nail */
+.swing:before{
+    content: '';
+    position: absolute;
+    width: 5px; height: 5px;
+    top: -14px;left: 54%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+ 
+@keyframes swing {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+       
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <div class="header">Đây là Trang của Thắng dành riêng cho chị My</div>
+        <div class="container">Chị click vào đây nhé <i style="color:red" class="fa-solid fa-heart"></i>
+            <button onclick="click()" > Click me!<i style="color:red" class="fa-brands fa-gratipay"></i></button>
+        </div>
+        
+    </div>
+    <script>
+        function click() {
+            var main=document.querySelector(".main");
+            var htmls=`<figure class="swing">
+            <img src="./HAMY.png" width="200px" >
+             </figure>  `
+            main.innerHTML=htmls
+        }
+        document.querySelector("button").addEventListener('click', click)();
+
+    </script>
+</body>
+</html>
